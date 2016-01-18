@@ -1,0 +1,24 @@
+.idea
+.vagrant
+htdocs/app/bootstrap.php.cache
+htdocs/app/cache
+!htdocs/app/cache/.gitkeep
+htdocs/app/config/build.properties
+htdocs/app/config/parameters.yml
+htdocs/app/logs
+!htdocs/app/logs/.gitkeep
+htdocs/app/phpunit.xml
+htdocs/bin
+htdocs/vendor
+htdocs/web/bundles/*
+htdocs/web/uploads/
+*~
+# Codeception
+htdocs/codeception.yml
+htdocs/tests/_output
+htdocs/tests/_support
+htdocs/tests/acceptance/AcceptanceTester.php
+htdocs/tests/functional/FunctionalTester.php
+htdocs/tests/unit/UnitTester.php
+
+configs/config.yml

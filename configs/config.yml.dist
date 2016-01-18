@@ -1,0 +1,16 @@
+vm:
+    memory: 2048
+    cpus: 2
+    ioapic: "on"
+    box: ubuntu/trusty64
+    host_name: serialization.example
+    synced_folder_from: htdocs
+    synced_folder_to: /var/www/serialization_example
+    synced_folder_type: nfs
+    network_ip: 192.168.75.15
+database:
+    root_password: root
+    db_name: serialization_example
+xdebug:
+    remote_host: 192.168.50.1
+    idekey: XDEBUGIDEKEY
