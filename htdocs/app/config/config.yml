@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: custom/fos_user.yml }
     - { resource: custom/sonata.yml }
+    - { resource: custom/sonata/media.yml}
 
 framework:
     #esi:             ~
@@ -67,6 +68,10 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         mappings:
             ApplicationUserBundle: ~
+            SonataMediaBundle: ~
+    dbal:
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
 # Swiftmailer Configuration
 swiftmailer:
