@@ -2,3 +2,6 @@ application_sonata_admin_login:
     path:     /admin/login
     defaults: { _controller: ApplicationSonataAdminBundle:Security:login }
 
+application_sonata_admin_logout:
+    path:     /admin/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
