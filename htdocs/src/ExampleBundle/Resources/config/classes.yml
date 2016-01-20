@@ -1,0 +1,5 @@
+parameters:
+    example.image_manager.class: ExampleBundle\Entity\EntityManager\ImageManager
+    example.image_loader.class: ExampleBundle\Services\ImageLoader
+    example.image_serialization_subscriber.class: ExampleBundle\EventSubscriber\Serialization\ImageSerializationSubscriber
+    example.image_serialization_helper.class: ExampleBundle\Helper\Serialization\ImageSerializationHelper

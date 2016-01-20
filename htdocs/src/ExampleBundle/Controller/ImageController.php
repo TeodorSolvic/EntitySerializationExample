@@ -30,7 +30,7 @@ class ImageController extends FOSRestController
      */
     public function loadImagesAction(Request $request)
     {
-        $imageLoader = $this->get('gig_core.image_loader');
+        $imageLoader = $this->get('example.image_loader');
         $images = $imageLoader->loadImages($request);
 
         return ['images' => $images ];
@@ -42,7 +42,7 @@ class ImageController extends FOSRestController
      */
     public function deleteImageAction(Image $image)
     {
-        $this->get('gig_core.image_manager')->deleteImage($image);
+        $this->get('example.image_manager')->deleteImage($image);
 
         return $this->view([], Codes::HTTP_NO_CONTENT);
     }
