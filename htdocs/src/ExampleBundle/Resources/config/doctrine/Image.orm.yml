@@ -1,0 +1,30 @@
+ExampleBundle\Entity\Image:
+    type: entity
+    table: example_bundle_image
+    repositoryClass: ExampleBundle\Entity\Repository\ImageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        status:
+            type: smallint
+        createdAt:
+            type: datetime
+            nullable: false
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: false
+            column: updated_at
+    oneToOne:
+        file:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            cascade:
+                - persist
+                - remove
+    lifecycleCallbacks:
+        prePersist: [setCreatedAtValue, setUpdatedAtValue]
+        preUpdate: [setUpdatedAtValue]

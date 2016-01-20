@@ -1,0 +1,6 @@
+ExampleBundle\Entity\Image:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            type: integer
