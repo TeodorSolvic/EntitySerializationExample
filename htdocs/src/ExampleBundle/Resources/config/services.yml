@@ -1,4 +1,29 @@
 services:
-#    example.example:
-#        class: ExampleBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    example.entity_manager:
+        class: Doctrine\ORM\EntityManager
+        factory: [@doctrine, getManager]
+        public: false
+
+    example.image_manager:
+        class: %example.image_manager.class%
+        arguments:
+          - @example.entity_manager
+
+    example.image_loader:
+        class: %example.image_loader.class%
+        arguments:
+          - @example.image_manager
+          - @sonata.media.manager.media
+
+    example.image_serialization_helper:
+        class: %example.image_serialization_helper.class%
+        arguments:
+          - @sonata.media.pool
+          - @router.default
+
+    example.image_serialization_subscriber:
+        class: %example.image_serialization_subscriber.class%
+        arguments:
+          - @example.image_serialization_helper
+        tags:
+          - { name: jms_serializer.event_subscriber}
