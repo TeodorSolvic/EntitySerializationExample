@@ -32,11 +32,11 @@ class ImageSerializationHelper implements SerializationHelperInterface
 
     /**
      * {@Inheritdoc}
+     * @param Image $image
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
     public function getAdditionalData($image)
     {
-        /** @var Image $image */
         $media = $image->getFile();
 
         $provider = $this->sonataMediaPool->getProvider($media->getProviderName());

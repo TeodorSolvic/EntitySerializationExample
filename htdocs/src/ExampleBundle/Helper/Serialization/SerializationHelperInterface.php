@@ -9,7 +9,7 @@ namespace ExampleBundle\Helper\Serialization;
 interface SerializationHelperInterface
 {
     /**
-     * @param Object $entity
+     * @param $entity
      * @return array
      */
     public function getAdditionalData($entity);
