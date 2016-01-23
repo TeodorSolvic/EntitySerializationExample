@@ -9,7 +9,7 @@ use Grossum\CoreBundle\Entity\EntityTrait\SaveUpdateInManagerTrait;
 
 /**
  * Class ImageManager
- * @package Gig\CoreBundle\Entity\EntityManager
+ * @package ExampleBundle\Entity\EntityManager
  */
 class ImageManager
 {
@@ -27,7 +27,7 @@ class ImageManager
     public function __construct(ObjectManager $objectManager)
     {
         $this->objectManager = $objectManager;
-        $this->repository = $objectManager->getRepository('GigCoreBundle:Image');
+        $this->repository = $objectManager->getRepository('ExampleBundle:Image');
     }
 
     /**

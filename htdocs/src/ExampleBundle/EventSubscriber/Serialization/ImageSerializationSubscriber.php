@@ -19,7 +19,7 @@ class ImageSerializationSubscriber extends BaseSerializationSubscriber implement
             [
                 'event'  => 'serializer.post_serialize',
                 'method' => 'onObjectPostSerialize',
-                'class'  => 'Gig\CoreBundle\Entity\Image',
+                'class'  => 'ExampleBundle\Entity\Image',
                 'format' => 'json'
             ]
         ];

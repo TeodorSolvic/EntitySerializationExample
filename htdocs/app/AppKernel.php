@@ -19,18 +19,20 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
 
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            new Application\UserBundle\ApplicationUserBundle(),
-            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
-
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+
+            new Application\UserBundle\ApplicationUserBundle(),
+            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new ExampleBundle\ExampleBundle(),
         );
 

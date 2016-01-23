@@ -1,3 +1,19 @@
-example_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ExampleBundle:Default:index }
+example_image:
+    pattern: /api/images/{id}
+    defaults: { _controller: ExampleBundle:Image:getImage, _format: json }
+    requirements:
+        _method: GET
+        id: "\d+"
+
+example_image_delete:
+    pattern: /api/images/{id}
+    defaults: { _controller: ExampleBundle:Image:deleteImage, _format: json }
+    requirements:
+        _method: DELETE
+        id: "\d+"
+
+example_image_load_new:
+    pattern: /api/images
+    defaults: { _controller: ExampleBundle:Image:loadImages, _format: json }
+    requirements:
+        _method: POST
