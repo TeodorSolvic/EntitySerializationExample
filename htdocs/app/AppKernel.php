@@ -33,6 +33,7 @@ class AppKernel extends Kernel
 
             new Application\UserBundle\ApplicationUserBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new ExampleBundle\ExampleBundle(),
         );
 

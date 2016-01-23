@@ -1,28 +1,33 @@
 sonata_media:
-    # if you don't use default namespace configuration
-    #class:
-    #    media: MyVendor\MediaBundle\Entity\Media
-    #    gallery: MyVendor\MediaBundle\Entity\Gallery
-    #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
+    db_driver: doctrine_orm
     default_context: default
-    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
-        default:  # the default context is mandatory
+        default:
             providers:
                 - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
                 - sonata.media.provider.image
                 - sonata.media.provider.file
-
+                - sonata.media.provider.vimeo
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-
+        exampleContext:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 100 , quality: 100}
+                medium: { width: 300 , quality: 100}
+                big:   { width: 500 , quality: 100}
     cdn:
         server:
-            path: /uploads/media # http://media.sonata-project.org/
+            path: /uploads/media
 
     filesystem:
         local:
             directory:  %kernel.root_dir%/../web/uploads/media
-            create:     false
+            create:     true
+    providers:
+        image:
+            allowed_extensions: ['jpg', 'png', 'jpeg']
+            allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']

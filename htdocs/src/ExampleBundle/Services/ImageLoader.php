@@ -40,7 +40,7 @@ class ImageLoader
     public function loadImages(Request $request)
     {
         $images = [];
-        $context = $request->get('context');
+        $context = $request->get('context', 'exampleContext');
 
         /** @var UploadedFile $uploadedFile */
         foreach ($request->files->all() as $uploadedFile) {
